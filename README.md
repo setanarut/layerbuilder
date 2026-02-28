@@ -12,7 +12,6 @@ This package was developed to meet the need for artistic halftone generation.
 
 ```go
 func main() {
-func main() {
 	// Read the source image.
 	img := utils.ReadImage("../_test_files/parrot.png")
 	// Extract a 7-color palette using the dominant-color method.
@@ -31,8 +30,6 @@ func main() {
 	utils.SaveImage(recon, "../_test_files/output/recon.png")
 	utils.SavePalette(palette, 64, "../_test_files/output/palette.png")
 	utils.SaveRgbaImages(builder.RGBALayers(), "../_test_files/output/")
-}
-
 }
 
 ```
