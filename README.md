@@ -6,6 +6,8 @@ This implementation differs from the [original paper](https://arxiv.org/pdf/1701
 
 This package was developed to meet the need for artistic halftone generation.
 
+![](./doc/diagram.png)
+
 # Usage
 
 ```go
