@@ -1,3 +1,6 @@
+// Image Layer Decomposition in pure Go
+//
+// Paper https://arxiv.org/pdf/1701.03754
 package layerbuilder
 
 import (
@@ -46,11 +49,11 @@ func DefaultOptions() Options {
 	}
 }
 
-func OptionsFromSize(size image.Point) Options {
-	if size.X <= 0 || size.Y <= 0 {
+func OptionsFromSize(imageSize image.Point) Options {
+	if imageSize.X <= 0 || imageSize.Y <= 0 {
 		return DefaultOptions()
 	}
-	pixels := size.X * size.Y
+	pixels := imageSize.X * imageSize.Y
 	targetStep := 40.0
 	if pixels <= 512*512 {
 		targetStep = 32.0
