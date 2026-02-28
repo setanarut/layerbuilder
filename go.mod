@@ -1,4 +1,4 @@
-module layerbuilder
+module github.com/setanarut/layerbuilder
 
 go 1.26
 

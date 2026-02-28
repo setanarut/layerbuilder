@@ -1,10 +1,8 @@
 package main
 
 import (
-	// Import the layerbuilder package with a short alias.
-	lb "layerbuilder"
-	// Import utility helpers for image I/O and palette operations.
-	"layerbuilder/utils"
+	"github.com/setanarut/layerbuilder"
+	"github.com/setanarut/layerbuilder/utils"
 )
 
 func main() {
@@ -16,9 +14,9 @@ func main() {
 	utils.SortPaletteByBrightness(palette)
 
 	// Create a new builder with the image and palette.
-	builder := lb.NewLayerBuilder(img, palette)
+	builder := layerbuilder.NewLayerBuilder(img, palette)
 	// Build internal layers using options derived from image size.
-	builder.Build(lb.OptionsFromSize(img.Bounds().Size()))
+	builder.Build(layerbuilder.OptionsFromSize(img.Bounds().Size()))
 	// Reconstruct an image from grayscale alpha layers.
 	recon := builder.Reconstruct(builder.GrayLayers())
 
